@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSR CBT Test - Final</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">VSR</div>
+        <div class="timer">
+            टाइम बाकी: 
+            <div class="timer-unit" id="timer-hours">00</div> घंटे 
+            <div class="timer-unit" id="timer-minutes">25</div> मिनट 
+            <div class="timer-unit" id="timer-seconds">00</div> सेकंड
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="question-panel">
+            <div class="test-info">CBT -1 | कुल प्रश्न: 30</div>
+            
+            <div id="test-questions">
+                </div>
+            
+            <div class="navigation-bar" id="bottom-nav">
+                </div>
+        </div>
+        
+        <div class="status-panel">
+            <h3>प्रश्न स्थिति</h3>
+            <div class="status-grid" id="status-grid">
+                </div>
+        </div>
+    </div>
+
+    <div id="review-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Review test before submit</h3>
+                <span class="close-modal" onclick="closeReviewModal()">&times;</span>
+            </div>
+            <p>कृपया टेस्ट सबमिट करने से पहले अपनी प्रगति की जाँच करें:</p>
+            <table id="review-summary-table">
+                <thead>
+                    <tr>
+                        <th>Section name</th>
+                        <th>Questions count</th>
+                        <th>Answered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CBT -1</td>
+                        <td id="review-total-q">30</td>
+                        <td id="review-answered-q">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="submit-btn-modal" onclick="submitTest(false, true)">Submit Test</button>
+        </div>
+    </div>
+
+    <div id="result-overlay" class="modal-overlay">
+        <div class="review-box">
+            <div class="score-summary">
+                <h2>टेस्ट सबमिट किया गया!</h2>
+                <p>आपके परिणाम और समीक्षा:</p>
+                <h3 id="final-score"></h3>
+                <p id="marks-detail"></p>
+                <p>आपका रिजल्ट गोपनीय तरीके से सर्वर पर भेज दिया गया है।</p>
+            </div>
+            
+            <h3>उत्तर समीक्षा</h3>
+            <div id="review-answers">
+                </div>
+            
+            <button class="submit-btn-modal" style="float:none; display:block; margin: 20px auto 0;" onclick="document.getElementById('result-overlay').style.display='none';">बंद करें</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
